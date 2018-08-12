@@ -9,7 +9,7 @@ import { faRedoAlt } from '@fortawesome/free-solid-svg-icons'
 library.add(faRandom);
 
 export const Random = () => (
-    <div>
+    <div className='navIcons'>
         <FontAwesomeIcon icon="random" />
     </div>
 );
@@ -17,7 +17,7 @@ export const Random = () => (
 library.add(faRetweet);
 
 export const Retweet = () => (
-    <div>
+    <div className='navIcons'>
         <FontAwesomeIcon icon="retweet" />
     </div>
 );
@@ -25,7 +25,7 @@ export const Retweet = () => (
 library.add(faRedoAlt);
 
 export const RedoAlt = () => (
-    <div>
+    <div className='navIcons'>
         <FontAwesomeIcon icon="redo-alt" />
     </div>
 );
@@ -34,27 +34,28 @@ export class Controller extends React.Component {
     constructor(props){
         super(props);
         this.state = {
+
         }
     }
+
     render() {
         return (
             <div className='controller'>
-                <navbar className='navbar'>
+                <div className='navbar'>
                     <Retweet/>
                     <Random/>
                     <RedoAlt/>
-                    <div id="menuHamburger">
+                    <div onClick={this.props.onMenuClick} id="menuHamburger">
                         <input type="checkbox" />
                         <span></span>
                         <span></span>
                         <span></span>
                     </div>
-                </navbar>
+                </div>
                 <footer className='footer'>
                     <p className='artist'>Wykonawca</p>
                     <p className='song'>Utwór</p>
                 </footer>
-
             </div>
         )
     }
