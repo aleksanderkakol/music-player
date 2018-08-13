@@ -53,8 +53,8 @@ export class Controller extends React.Component {
                     </div>
                 </div>
                 <footer className='footer'>
-                    <p className='artist'>Wykonawca</p>
-                    <p className='song'>Utwór</p>
+                    <p className='artist'>{this.props.musicList[this.props.i].artist}</p>
+                    <p className='song'>{this.props.musicList[this.props.i].title}</p>
                 </footer>
             </div>
         )

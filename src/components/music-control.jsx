@@ -16,33 +16,25 @@ export const Share = () => (
 library.add(faHeart);
 
 export const Favourite = () => (
-    <button className='fontAwesomeIcon favHeart'>
         <FontAwesomeIcon icon="heart" />
-    </button>
 );
 
 library.add(far);
 
 export const Heart = () => (
-    <button className='fontAwesomeIcon unFavHeart'>
         <FontAwesomeIcon icon={["far", "heart"]} />
-    </button>
 );
 
 library.add(faStepForward);
 
 export const StepForward = () => (
-    <button className='fontAwesomeIcon stepForward'>
         <FontAwesomeIcon icon="step-forward" />
-    </button>
 );
 
 library.add(faStepBackward);
 
 export const StepBackward = () => (
-    <button className='fontAwesomeIcon stepBack'>
         <FontAwesomeIcon icon="step-backward" />
-    </button>
 );
 
 library.add(faPause);
@@ -83,9 +75,16 @@ export class Controls extends React.Component {
         });
     };
 
+    handleFav = () => {
+        this.setState({
+            favourite: !this.state.favourite
+        });
+    };
+
 
     render() {
         let startPlay = this.state.play?<Pause/>:<Play/>;
+        let favourite = this.state.favourite?<Favourite/>:<Heart/>;
         return (
             <div className='musicControl'>
                 <div className='track'/>
@@ -94,14 +93,20 @@ export class Controls extends React.Component {
                 <div className='musicButtons'>
                     <Share/>
                     <div className="play">
-                        <StepBackward/>
+                        <button onClick={this.props.prev} className='fontAwesomeIcon stepBack'>
+                            <StepBackward/>
+                        </button>
+
                         <button onClick={this.handlePlay} className='checkbox'>
                             {startPlay}
                         </button>
-                        <StepForward/>
+                        <button onClick={this.props.next} className='fontAwesomeIcon stepForward'>
+                            <StepForward/>
+                        </button>
                     </div>
-                    <Heart/>
-                    {/*<Favourite/>*/}
+                    <button className='fontAwesomeIcon unFavHeart favHeart' onClick={this.handleFav}>
+                        {favourite}
+                    </button>
                 </div>
             </div>
         )

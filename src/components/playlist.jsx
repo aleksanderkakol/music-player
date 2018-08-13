@@ -24,49 +24,15 @@ export const Favourite = () => (
         <FontAwesomeIcon icon="heart" />
 );
 
-let arrayOfMusic = [{
-    'artist': "Icona Pop",
-    'title': "Still Don't Know",
-    'duration': "3:16"},
-    {
-        'artist': "Icona Pop",
-        'title': "I Love It",
-        'duration': "2:35"
-    },
-    {
-        'artist': "Icona Pop",
-        'title': "Girlfriend",
-        'duration': "2:50"
-    },
-    {
-        'artist': "Icona Pop",
-        'title': "We Got The World",
-        'duration': "3:07"
-    },
-    {
-        'artist': "Icona Pop",
-        'title': "Night Like This",
-        'duration': "3:24"
-    }];
-
 export class Playlist extends React.Component {
     constructor(props){
         super(props);
-        this.state = {
-            musicList: []
-        }
     }
 
-    componentDidMount = () => {
-        this.setState ({
-            musicList: arrayOfMusic
-        })
-    };
-
     render() {
-        let listOfMusic = this.state.musicList.map(music => {
+        let listOfMusic = this.props.musicList.map((music,e) => {
            return (
-               <li className='description' key={music.title+music.artist+music.duration}>
+               <li id={e} onClick={this.props.onPlayListClick} className='description' key={music.title+music.artist+music.duration}>
                    <div className="musicTitle">
                        <div className='artist'>
                        {music.duration} | {music.artist}
