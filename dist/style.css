@@ -1,0 +1,315 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif; }
+
+.main {
+  padding-top: 150px;
+  width: 100vw;
+  height: 100vh;
+  background: url(475074c599273f00cece97862eb7d376.png) center no-repeat;
+  background-size: cover; }
+
+.player {
+  overflow: hidden;
+  margin: auto;
+  background: #eeeef5;
+  width: 90%;
+  max-width: 700px;
+  height: 90%;
+  border-radius: 8%;
+  box-shadow: 0 0 200px 0 #140401; }
+
+.player-content {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%; }
+
+.controller {
+  display: flex;
+  align-content: space-between;
+  flex-wrap: wrap;
+  background: url(f2908a74dc0e5130c15530c626dfb311.png) center no-repeat;
+  background-size: 110% 100%;
+  width: 100%;
+  height: 70%; }
+
+.navbar {
+  position: relative;
+  display: flex;
+  font-size: 2rem;
+  width: 100%;
+  height: 20%;
+  background-color: rgba(69, 69, 170, 0.64);
+  justify-content: center;
+  align-items: center; }
+  .navbar svg {
+    margin: 20px; }
+    .navbar svg path {
+      fill: white; }
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  background-color: rgba(69, 69, 170, 0.64);
+  width: 100%;
+  height: 20%; }
+  .footer p {
+    color: white;
+    text-align: center;
+    width: 100%; }
+  .footer .artist {
+    font-size: 1.8rem;
+    font-weight: bold; }
+  .footer .song {
+    font-size: 1.5rem; }
+
+.musicControl {
+  width: 100%;
+  height: 30%;
+  overflow: hidden; }
+
+.volumeColor, .track {
+  position: absolute;
+  right: 0;
+  display: inline-block;
+  background-color: tomato;
+  height: 15px; }
+
+.track {
+  left: 0;
+  background-color: white; }
+
+.volumeControl {
+  position: absolute;
+  width: 100%;
+  z-index: 3;
+  background: transparent;
+  -webkit-appearance: none; }
+  .volumeControl::-webkit-slider-runnable-track {
+    height: 15px;
+    background-color: transparent;
+    border: none; }
+  .volumeControl::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: white url(10857b327a3a5215949e6d899d313d17.svg) center no-repeat;
+    background-size: 70%;
+    margin-top: -8px;
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.33);
+    transition: 0.2s; }
+    .volumeControl::-webkit-slider-thumb:hover {
+      transform: scale(1.5);
+      cursor: pointer; }
+    .volumeControl::-webkit-slider-thumb:active {
+      transform: scale(1); }
+  .volumeControl::-moz-range-track {
+    height: 15px;
+    background-color: transparent;
+    border: none; }
+  .volumeControl::-moz-range-thumb {
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: white url(10857b327a3a5215949e6d899d313d17.svg) center no-repeat;
+    background-size: 70%;
+    margin-top: -6px;
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.33);
+    transition: 0.2s; }
+    .volumeControl::-moz-range-thumb:hover {
+      transform: scale(1.5);
+      cursor: pointer; }
+    .volumeControl::-moz-range-thumb:active {
+      transform: scale(1); }
+  .volumeControl:-moz-focusring {
+    outline: 1px solid white;
+    outline-offset: -1px; }
+  .volumeControl:focus::-moz-range-track {
+    background-color: transparent; }
+  .volumeControl:focus {
+    outline: none; }
+  .volumeControl:focus::-webkit-slider-runnable-track {
+    background-color: transparent; }
+
+.musicButtons {
+  height: 90%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center; }
+  .musicButtons .fontAwesomeIcon {
+    border: 0;
+    font-size: 1.5rem;
+    background-color: white;
+    display: inline-block;
+    padding: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.2s; }
+    .musicButtons .fontAwesomeIcon:hover {
+      transform: scale(1.2);
+      box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.33); }
+    .musicButtons .fontAwesomeIcon:active {
+      box-shadow: inset 0 0 5px 1px rgba(0, 0, 0, 0.33); }
+    .musicButtons .fontAwesomeIcon path {
+      fill: #625190; }
+    .musicButtons .fontAwesomeIcon:last-child path {
+      fill: tomato; }
+  .musicButtons .play .fontAwesomeIcon {
+    border: 0;
+    background-color: #625190;
+    margin: 10px 15px; }
+    .musicButtons .play .fontAwesomeIcon path {
+      fill: white; }
+
+.checkbox {
+  background-color: transparent;
+  border: 0;
+  outline: 0; }
+  .checkbox .startMusic {
+    transform: scale(1.4); }
+    .checkbox .startMusic:hover {
+      transform: scale(1.6); }
+
+.navIcons {
+  transition: 0.2s; }
+  .navIcons:hover {
+    transform: scale(1.4);
+    cursor: pointer; }
+  .navIcons:active {
+    transform: scale(1); }
+
+.playList {
+  color: #625190;
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 30px; }
+  .playList:after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(to bottom, rgba(137, 255, 241, 0) 0%, #eeeef5 100%); }
+  .playList .nav {
+    width: 100%; }
+  .playList .title {
+    flex-grow: 1;
+    text-align: center; }
+  .playList .btn {
+    position: absolute;
+    background-color: white;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    border: 0; }
+    .playList .btn:hover {
+      transform: scale(1.2); }
+    .playList .btn:active {
+      transform: scale(1);
+      box-shadow: inset 0 0 5px 1px rgba(0, 0, 0, 0.33); }
+    .playList .btn path {
+      fill: #625190; }
+  .playList .list {
+    margin-top: 50px;
+    width: 100%;
+    list-style: none;
+    max-height: 60vh;
+    position: relative;
+    overflow-y: auto; }
+    .playList .list::-webkit-scrollbar {
+      width: 10px; }
+    .playList .list::-webkit-scrollbar-thumb {
+      background-color: #c6c3cb;
+      border-radius: 5px; }
+    .playList .list .description {
+      padding: 45px 0;
+      cursor: pointer;
+      border-bottom: 1px solid #c6c3cb;
+      transition: 0.2s; }
+      .playList .list .description:hover {
+        background-color: white; }
+      .playList .list .description:active {
+        box-shadow: inset 0 0 5px 1px rgba(0, 0, 0, 0.33);
+        transform: scale(0.99); }
+      .playList .list .description .playListIcon {
+        display: inline-block;
+        text-align: right;
+        font-size: 1.5rem; }
+        .playList .list .description .playListIcon svg:last-child {
+          margin: 0 20px; }
+          .playList .list .description .playListIcon svg:last-child path {
+            fill: tomato; }
+        .playList .list .description .playListIcon svg:hover {
+          transform: scale(1.2); }
+      .playList .list .description .artist {
+        color: #4b4a4d;
+        font-size: 1rem;
+        display: inline-block; }
+      .playList .list .description .musicTitle {
+        display: flex;
+        justify-content: space-between; }
+        .playList .list .description .musicTitle .music {
+          font-size: 1.5rem;
+          color: #625190; }
+
+#menuHamburger {
+  position: absolute;
+  right: 30px;
+  z-index: 1;
+  -webkit-user-select: none;
+  user-select: none; }
+
+#menuHamburger input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+  -webkit-touch-callout: none; }
+
+#menuHamburger span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: rgba(255, 255, 255, 0.73);
+  border-radius: 3px;
+  z-index: 1;
+  transform-origin: 4px 0;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease; }
+
+#menuHamburger span:first-child {
+  transform-origin: 0; }
+
+#menuHamburger span:last-child {
+  transform-origin: 0 100%; }
+
+#menuHamburger input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: rgba(255, 255, 255, 0.73); }
+
+#menuHamburger input:checked ~ span:nth-last-child(2) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2); }
+
+#menuHamburger input:checked ~ span:last-child {
+  transform: rotate(-45deg) translate(0, -1px); }

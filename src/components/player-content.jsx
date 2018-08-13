@@ -59,7 +59,7 @@ export class Content extends React.Component {
     handleClick = (e) => {
         this.setState ({
             playList: false,
-            name: e.currentTarget.id
+            name: Number(e.currentTarget.id)
         });
     };
 

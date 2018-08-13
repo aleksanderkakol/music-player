@@ -39,6 +39,7 @@ export class Controller extends React.Component {
     }
 
     render() {
+        console.log(this.props.i)
         return (
             <div className='controller'>
                 <div className='navbar'>
